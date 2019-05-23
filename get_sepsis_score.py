@@ -27,6 +27,8 @@ def get_sepsis_score(data, model):
     x_norm = np.nan_to_num((x - x_mean) / x_std)
     c_norm = np.nan_to_num((c - c_mean) / c_std)
 
+    model = model+1
+
     beta = np.array([
         0.1806,  0.0249, 0.2120,  -0.0495, 0.0084,
         -0.0980, 0.0774, -0.0350, -0.0948, 0.1169,
@@ -49,4 +51,5 @@ def get_sepsis_score(data, model):
     return score, label
 
 def load_sepsis_model():
-    return None
+    model = 0
+    return model
